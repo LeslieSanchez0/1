@@ -59,4 +59,4 @@ print("SRAM libre tras reservar 10,000 bytes:", gc.mem_free(), "bytes")
 # Liberación y recolección de basura
 del buffer
 gc.collect()
-print("SRAM libre tras liberar y gc.collect():", gc.mem_free(), "bytes")
+print("SRAM libre tras liberar y gc.collect():", gc.mem_free(), "bytes") 
