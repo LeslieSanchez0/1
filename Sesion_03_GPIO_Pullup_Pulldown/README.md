@@ -33,16 +33,55 @@ El circuito consta de dos etapas principales:
 | **LED Peatón Rojo** | `GP12` | Salida (`OUT`) | `1` = Encendido, `0` = Apagado |
 | **LED Peatón Verde** | `GP11` | Salida (`OUT`) | `1` = Encendido, `0` = Apagado |
 
-### Esquema Electrónico
-```text
-               +----------------------------------+
-               |        Raspberry Pi Pico         |
-               |                                  |
-               |  [GP16] <--- Botón ---> GND      |
-               |                                  |
-               |  [GP15] ---> [330Ω] ---> LED Auto Rojo  ---> GND
-               |  [GP14] ---> [330Ω] ---> LED Auto Amar. ---> GND
-               |  [GP13] ---> [330Ω] ---> LED Auto Verde ---> GND
-               |  [GP12] ---> [330Ω] ---> LED Peatón Rojo---> GND
-               |  [GP11] ---> [330Ω] ---> LED Peatón Verd---> GND
-               +----------------------------------+
+
+## Funcionamiento
+El sistema ejecuta un flujo continuo de decisión y estados para garantizar un cruce seguro:  
+
+1. **Estado S0 (Reposo):** Los vehículos tienen paso (**Auto Verde = 1**) y los peatones esperan (**Peatón Rojo = 1**).  
+2. **Petición de Paso:** Al presionar el botón (`GP16` pasa a `0`), la CPU detecta la petición de cruce.  
+3. **Filtro Debounce y Wait for Release:** Se aplica un retardo de $30\text{ ms}$ para validar la presión y un bucle de espera (`while button.value() == 0`) para evitar que mantener presionado el botón repita o encole secuencias.  
+4. **Estado S1 (Transición):** El tráfico vehicular frena (**Auto Amarillo = 1** por 1.5 s, **Peatón Rojo = 1**).  
+5. **Estado S2 (Cruce Peatonal):** Los autos se detienen y los peatones cruzan (**Auto Rojo = 1**, **Peatón Verde = 1** por 4 s).  
+6. **Estado S3 (Fin de Cruce):** El LED verde peatonal parpadea (4 ciclos con toggle cada $300\text{ ms}$) antes de volver al reposo en S0.  
+
+> **Invariante de Seguridad:** Auto Verde y Peatón Verde NUNCA están activos al mismo tiempo.  
+
+---
+
+## Pull-up / Pull-down
+
+### El Pin Flotante
+Una entrada digital no conectada queda en un estado no garantizado (*floating*), captando ruido ambiental al no estar fijada ni a $0\text{ V}$ ni a $3.3\text{ V}$.  
+
+### Comparativa de Configuración
+
+| Configuración | Circuito / Estado Libre | Estado Presionado | Aplicación en la Práctica |
+| :--- | :--- | :--- | :--- |
+| **Pull-Up** | Pin conectado a $3.3\text{ V}$ vía resistencia. Lectura por defecto = `1`. | Botón cierra circuito a `GND`. Lectura = `0`. | **Utilizado:** Usamos el Pull-Up interno (`GP16` -> Botón -> `GND`). |
+| **Pull-Down** | Pin conectado a `GND` vía resistencia. Lectura por defecto = `0`. | Botón cierra circuito a $3.3\text{ V}$. Lectura = `1`. | Referencia técnica de laboratorio. |
+
+---
+
+## Pruebas Realizadas
+
+Se aplicó el plan de pruebas técnico para validar la seguridad y estabilidad del semáforo:  
+
+| Prueba / Evento | Comportamiento Esperado | Resultado Registrado |
+| :--- | :--- | :-: |
+| **Encender sistema** | Autos verde / Peatón rojo | **PASS** |
+| **Pulsar una vez** | Ejecuta una secuencia completa de cruce | **PASS** |
+| **Mantener botón** | No repite la secuencia inmediatamente (*wait-for-release*) | **PASS** |
+| **Pulsar varias veces** | Mantiene estabilidad del sistema sin cierres o fallos | **PASS** |
+| **Durante el cruce** | Nunca coinciden Auto Verde + Peatón Verde | **PASS**|
+
+---
+
+## Problemas Encontrados
+
+1. **No le sé :(:**
+   * *Problema:* Me costó muchísimo trabajo. El problema soy yo :,(
+
+---
+
+## Conclusión
+El desarrollo de esta sesión demostró que los pines GPIO son el puente fundamental entre el software y el mundo físico. Se comprobó que el control de hardware exige más que la escritura de lógica digital: requiere gestionar fenómenos eléctricos reales como las referencias de voltaje por **Pull-Up/Pull-Down** para evitar el ruido de pines flotantes, así como filtrar mecánicamente las señales mediante rutinas de **debounce**. Asimismo, la abstracción mediante funciones y máquinas de estado permitió implementar una regla de seguridad crítica en el semáforo,, demostrando que una misma lógica algorítmica puede ser portada fácilmente entre MicroPython y C/C++ Pico SDK.
