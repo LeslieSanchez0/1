@@ -85,3 +85,8 @@ Se aplicó el plan de pruebas técnico para validar la seguridad y estabilidad d
 
 ## Conclusión
 El desarrollo de esta sesión demostró que los pines GPIO son el puente fundamental entre el software y el mundo físico. Se comprobó que el control de hardware exige más que la escritura de lógica digital: requiere gestionar fenómenos eléctricos reales como las referencias de voltaje por **Pull-Up/Pull-Down** para evitar el ruido de pines flotantes, así como filtrar mecánicamente las señales mediante rutinas de **debounce**. Asimismo, la abstracción mediante funciones y máquinas de estado permitió implementar una regla de seguridad crítica en el semáforo,, demostrando que una misma lógica algorítmica puede ser portada fácilmente entre MicroPython y C/C++ Pico SDK.
+
+## Evidencias
+Todas las evidencias se encuentran en la carpeta de evidencias (Evidence)
+:)
+Al final si me gustó
