@@ -40,8 +40,7 @@ Registro de la ejecución de 5 intentos en el juego de reflejos:
 * **Salidas falsas detectadas:** 1
 
 ## 6. Problemas encontrados
-* **Rebotes mecánicos (Bounce):** Al presionar el botón físico o virtual, el contacto generaba múltiples pulsos eléctricos falsos en microsegundos. Se solucionó implementando un control de *debounce* con `ticks_diff()` mayor a $80\text{ ms}$.
-* **Pulsos invertidos:** Al principio el sistema no respondía debido a que no se había configurado correctamente la resistencia de pull-up interno (`Pin.PULL_UP`), haciendo que el estado de reposo no fuera el esperado ($1$ lógico).
+* **Virtual vs Físico:** Al hacer el circuito en digital, todo estaba muy bien, pero al pasarlo en físico (tal y como lo había hecho) no funcionaba el botón, prendian los LEDS, pero el botón no funcionaba, los cables del botón hacían la función del botón, lo cual era gracioso, después ví que no había puesto todo en su lugar, volteé el botón y conecté tierra de la pico a tierra de la proto, así solucioné mis problemas (me hice casi 2 horas en encontrar el error, TODO FUE PRUEBA Y ERROR :)   ).
 
 ## 7. Conclusión
 El uso de interrupciones y temporizadores demuestra ser una solución eficiente y robusta frente al método tradicional de sondeo (*polling*). Aprendimos a separar responsabilidades: la ISR captura eventos críticos de forma inmediata, el temporizador gestiona los retardos asíncronos y el bucle principal se encarga de la lógica de presentación de datos, permitiendo construir aplicaciones interactivas y escalables tanto en MicroPython como en C/C++.
