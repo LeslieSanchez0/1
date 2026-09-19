@@ -20,8 +20,8 @@ Todo el hardware está basado en la **Raspberry Pi Pico 2 W**, programado en ent
 | :---: | :--- | :--- | :--- |
 | **01** | Hola Mundo Dual (Blink) | Python / C++ | [Ver Sesión 01](./Sesion_01_Entorno) |
 | **02** | Control GPIO: Semáforo | Python / C++ | [Ver sesión 02](./Sesion_02_Conceptos_Basicos_MCU) |
-| **03** | GPIO Pullup y Pulldown | Python / C++  | ... |
-| **04** | Interrupciones Temporizadores | Python / C++  | ... |
-| **1er Examen** | Escape Room | Python / C++  | ... |
+| **03** | GPIO Pullup y Pulldown | Python / C++  | [...](https://github.com/LeslieSanchez0/1/tree/main/Sesion_03_GPIO_Pullup_Pulldown) |
+| **04** | Interrupciones Temporizadores | Python / C++  | https://github.com/LeslieSanchez0/1/tree/main/Sesion_04_Interrupciones_Temporizadores |
+| **1er Examen** | Escape Room | Python / C++  | https://github.com/LeslieSanchez0/1/tree/main/EXAMEN%201 |
 
 *(Nota: Haz clic en los enlaces de la tabla para ver el código, diagramas y videos de cada práctica).*
