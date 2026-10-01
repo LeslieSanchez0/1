@@ -61,13 +61,10 @@ Para evitar cambios bruscos de corriente y esfuerzo mecánico en el motor, la ve
 
 1. **El motor no gira:** 
    * *Causa:* Falta de tierra común (GND) entre la fuente externa y la Raspberry Pi Pico, o el puente ENA seguía puesto en la tablilla física.
-   * *Solución:* Unir los GNDs y retirar el jumper ENA para conectar el pin PWM de la Pico[cite: 1].
-2. **El motor gira al revés:**
-   * *Causa:* Inversión en los cables de salida (`OUT1`/`OUT2`) o lógica invertida en `IN1`/`IN2`.
-   * *Solución:* Intercambiar las conexiones físicas o ajustar las funciones de software `forward()` y `reverse()`.
-3. **La velocidad no cambia:**
-   * *Causa:* Configuración incorrecta de la frecuencia PWM o pin erróneo en `machine.PWM()`.
-   * *Solución:* Verificar que el pin asignado sea `GP4` (ENA) y validar el cálculo de `duty_u16()` con el rango de 0 a 65535.
-  
+   * *Solución:* Unir los GNDs y retirar el jumper ENA para conectar el pin PWM de la Pico.
 
-     
+2. **LEDs NO encendidos del L298N:** 
+   * *Causa:* Desconexión o ausencia de referencia de tierra en el sistema.
+   * *Solución:* Tierras conectadas.
+
+
