@@ -45,7 +45,7 @@ El estado del sistema se clasifica en función del porcentaje calculado de la se
 
 | Estado | Rango de Porcentaje | Acción / Salida Física |
 | :--- | :--- | :--- |
-| **NORMAL** | 0% a 49% | LED Verde encendido ($50\,%$ % umbral inferior) |
+| **NORMAL** | 0% a 49% | LED Verde encendido ($50%\,%$ umbral inferior) |
 | **WARNING** | 50% a 74% | LED Amarillo encendido (Se acerca al límite) |
 | **ALARM** | 75% a 100% | LED Rojo encendido (Acción requerida) |
 
