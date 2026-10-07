@@ -16,7 +16,7 @@ El **ADC (Analog-to-Digital Converter)** permite que el microcontrolador deje de
 Para traducir el valor crudo a unidades comprensibles, utilizamos reglas de tres proporcionales:
 * **Voltaje ($V$):**
 $$\text{voltage} = \frac{\text{raw} \times 3.3}{65535}$$
-* **Porcentaje ($%$):**
+* **Porcentaje (%):**
 $$\text{percent} = \frac{\text{raw} \times 100}{65535}$$
 
 ---
@@ -45,7 +45,7 @@ El estado del sistema se clasifica en función del porcentaje calculado de la se
 
 | Estado | Rango de Porcentaje | Acción / Salida Física |
 | :--- | :--- | :--- |
-| **NORMAL** | 0% a 49% | LED Verde encendido ($50\,%$ umbral inferior) |
+| **NORMAL** | 0% a 49% | LED Verde encendido ($50\,%$ % umbral inferior) |
 | **WARNING** | 50% a 74% | LED Amarillo encendido (Se acerca al límite) |
 | **ALARM** | 75% a 100% | LED Rojo encendido (Acción requerida) |
 
