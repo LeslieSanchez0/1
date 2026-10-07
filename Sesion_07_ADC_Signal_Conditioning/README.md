@@ -54,7 +54,7 @@ El estado del sistema se clasifica en función del porcentaje calculado de la se
 ### Tabla de Pruebas (PASS / FAIL)
 
 | Prueba | Condición / Descripción | Valor Esperado | Resultado (PASS / FAIL) |
-| :--- | :--- | :--- |
+| :--- | :--- | :--- | :--- |
 | **ADC Mínimo** | Potenciómetro girado al mínimo | **PASS** | **PASS** |
 | **ADC Medio** | Potenciómetro en la posición central | **PASS** | **PASS** |
 | **ADC Máximo** | Potenciómetro girado al máximo | **PASS** | **PASS** |
