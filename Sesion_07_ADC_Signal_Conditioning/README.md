@@ -55,14 +55,14 @@ El estado del sistema se clasifica en función del porcentaje calculado de la se
 
 | Prueba | Condición / Descripción | Valor Esperado | Resultado (PASS / FAIL) |
 | :--- | :--- | :--- | :--- |
-| **ADC Mínimo** | Potenciómetro girado al mínimo | **PASS** | **PASS** |
-| **ADC Medio** | Potenciómetro en la posición central | **PASS** | **PASS** |
-| **ADC Máximo** | Potenciómetro girado al máximo | **PASS** | **PASS** |
-| **Filtro** | Variación rápida en la perilla | **PASS** | **PASS** |
-| **Normal** | Porcentaje <50% | **PASS** | **PASS** |
-| **Warning** | 50% >= Porcentaje <75%| **PASS** | **PASS** |
-| **Alarm** | Porcentaje >=75% | **PASS** | **PASS** |
-| **Recuperación** | Disminuir la señal desde ALARM | **PASS** | **PASS** |
+| **ADC Mínimo** | Potenciómetro girado al mínimo | $\text{raw} \approx 0$, $0\,\%$ ($0\text{ V}$) | **PASS** |
+| **ADC Medio** | Potenciómetro en la posición central | $\text{raw} \approx 32767$, $50\,\%$ ($\approx 1.65\text{ V}$) | **PASS** |
+| **ADC Máximo** | Potenciómetro girado al máximo | $\text{raw} \approx 65535$, $100\,\%$ ($\approx 3.3\text{ V}$) | **PASS** |
+| **Filtro** | Variación rápida en la perilla | La señal filtrada cambia de forma suave y sin saltos | **PASS** |
+| **Normal** | Porcentaje <50% | LED Verde activo, Amarillo y Rojo apagados | **PASS** |
+| **Warning** | 50% >= Porcentaje <75%| LED Amarillo activo, Verde y Rojo apagados | **PASS** |
+| **Alarm** | Porcentaje >=75% | LED Rojo activo, Verde y Amarillo apagados | **PASS** |
+| **Recuperación** | Disminuir la señal desde ALARM | Vuelve de ALARM a NORMAL al descender el valor | **PASS** |
 
 ---
 
