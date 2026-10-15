@@ -45,7 +45,9 @@ El valor analógico del potenciómetro ($0-100\%$) clasifica el estado del siste
 ---
 ## Conclusiones
 * La simulación en Wokwi resulta fundamental para validar la lógica algorítmica y la programación basada en eventos no bloqueantes.
-* El uso del módulo _thread en la placa física demuestra las ventajas reales de la arquitectura dual-core en sistemas embebidos, permitiendo separar procesos críticos en tiempo real de tareas secundarias de interfaz.
+* Lo tqm Wicho, hubo pánico en la práctica, pero se logró :)  , nada se quemó.
+
 
 ---
+
 
