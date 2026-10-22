@@ -1,5 +1,6 @@
-Tabla de Pruebas 
+## Tabla de Pruebas 
 Cada comando enviado desde Thonny cruza el puente UART hardware (GP0 → GP1) antes de ser interpretado por el parser:
+
 
 | Caso de Prueba | Comando USB (USB CMD) | Trama en Loopback (UART RX) | Respuesta esperada (RESP) | Resultado |
 | :--- | :--- | :--- | :--- | :--- |
