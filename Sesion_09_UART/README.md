@@ -47,9 +47,9 @@ Para evitar que una cadena de texto se convierta en ruido sin sentido, la aplica
 Los comandos enviados deben seguir la estructura:
 ACCIÓN, DISPOSITIVO, VALOR\N
 * **Ejemplo de comando SET:** SET,LED1,1
-    *° SET: Acción a realizar.
-    *° LED1: Dispositivo destino.
-    *° 1: Estado solicitado (1 = ON, 0 = OFF).
+    * SET: Acción a realizar.
+    * LED1: Dispositivo destino.
+    * 1: Estado solicitado (1 = ON, 0 = OFF).
 
 ---
 
