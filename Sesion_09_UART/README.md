@@ -56,11 +56,11 @@ ACCIÓN, DISPOSITIVO, VALOR\N
 ## ACK, ERR y STATUS
 El sistema procesa la trama recibida y emite tres tipos de respuestas estandarizadas:
 * ACK (Acknowledge): Confirmación de comando procesado correctamente.
-    ° Respuesta: ACK,LED1,1
+    * Respuesta: ACK,LED1,1
 * STATUS: Reporte del estado actual de todos los actuadores.
-    ° Respuesta: STATUS,LED1,1,LED2,0
+    * Respuesta: STATUS,LED1,1,LED2,0
 * ERR (Error): Trama inválida, parámetros fuera de rango o dispositivo no encontrado.
-    ° Ejemplo: ERR,BAD_SET_FRAME o ERR,INVALID_VAL
+    * Ejemplo: ERR,BAD_SET_FRAME o ERR,INVALID_VAL
 
   ### Esquema de Conexiones
 Es crucial diferenciar los canales físicos y lógicos de comunicación en la Raspberry Pi Pico:
