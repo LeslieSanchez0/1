@@ -20,10 +20,10 @@ UART (Universal Asynchronous Receiver-Transmitter) es un protocolo de comunicaci
 Para que la comunicación asíncrona funcione correctamente sin un cable de reloj compartido, ambos dispositivos deben acordar los siguientes parámetros:
 * **Baud Rate (9600 bps):** Determina la velocidad de transmisión (bits por segundo). A 9600 bps se transmiten aproximadamente 960 bytes/s. Si los baud rates no coinciden, la trama se interpreta como ruido o caracteres corruptos.
 * **Trama 8N1:** Define la estructura de empaquetado de cada byte transmitido:
-    ° **8:** 8 bits de datos por carácter.
-    ° **N:** None (sin bit de paridad).
-    ° **1:** 1 bit de parada (stop bit).
-    ° (Incluye 1 bit de inicio / start bit, dando un total de $\approx 10$ bits por byte transmitido).
+    *° **8:** 8 bits de datos por carácter.
+    *° **N:** None (sin bit de paridad).
+    *° **1:** 1 bit de parada (stop bit).
+    *° (Incluye 1 bit de inicio / start bit, dando un total de $\approx 10$ bits por byte transmitido).
 ---
 ### USB/REPL vs UART Hardware
 Es crucial diferenciar los canales físicos y lógicos de comunicación en la Raspberry Pi Pico:
@@ -47,9 +47,9 @@ Para evitar que una cadena de texto se convierta en ruido sin sentido, la aplica
 Los comandos enviados deben seguir la estructura:
 ACCIÓN, DISPOSITIVO, VALOR\N
 * **Ejemplo de comando SET:** SET,LED1,1
-    ° SET: Acción a realizar.
-    ° LED1: Dispositivo destino.
-    ° 1: Estado solicitado (1 = ON, 0 = OFF).
+    *° SET: Acción a realizar.
+    *° LED1: Dispositivo destino.
+    *° 1: Estado solicitado (1 = ON, 0 = OFF).
 
 ---
 
