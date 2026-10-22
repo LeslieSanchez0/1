@@ -1,5 +1,4 @@
-
-#Tabla de Pruebas 
+Tabla de Pruebas 
 Cada comando enviado desde Thonny cruza el puente UART hardware (GP0 → GP1) antes de ser interpretado por el parser:
 
 | Caso de Prueba | Comando USB (USB CMD) | Trama en Loopback (UART RX) | Respuesta esperada (RESP) | Resultado |
@@ -10,4 +9,3 @@ Cada comando enviado desde Thonny cruza el puente UART hardware (GP0 → GP1) an
 | **Apagado global de actuadores** | SET,ALL,0 | SET,ALL,0 | ACK,ALL,0 | :) |
 | **Encendido global de actuadores** | SET,ALL,1 | SET,ALL,1 | ACK,ALL,1 | :) |
 | **Lectura del estado global** | GET,STATUS | GET,STATUS | STATUS,LED1,0,LED2,0 | :) |
----
