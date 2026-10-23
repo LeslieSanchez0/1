@@ -57,8 +57,3 @@ El parser valida las tramas para evitar interrupciones o bloqueos del programa:
 
 ---
 
-## 📷 Evidencia del Sistema Físico
-
-*(Reemplaza la siguiente imagen con una fotografía real de tu circuito montado)*
-
-![Circuito Montado](assets/sistema_montado.jpg)
