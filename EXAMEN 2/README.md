@@ -12,6 +12,22 @@ Sistema embebido desarrollado sobre **Raspberry Pi Pico** con MicroPython, integ
 
 ---
 
+## Propósito del examen
+
+Construir y demostrar un único sistema embebido que integre los temas principales vistos en las sesiones recientes. La Raspberry Pi Pico deberá recibir comandos, controlar salidas, leer entradas y mantener una tarea de adquisición en segundo plano sin detener la comunicación.
+
+---
+
+## Material y montaje mínimo
+* Raspberry Pi Pico / Pico W / Pico 2 / Pico 2 W con MicroPython.
+* Computadora con Thonny y cable USB de datos.
+* 2 LEDs con resistencias (o shield de LEDs equivalente).
+* 1 botón/pulsador.
+* 1 fuente analógica de sesiones anteriores: potenciómetro, LDR, NTC u otro sensor analógico aprobado por el docente.
+* Jumpers y protoboard, si el shield no incluye los elementos necesarios.
+
+---
+
 ## Asignación de Pines y Hardware
 
 | Elemento | Pin Pico | Función / Configuración |
