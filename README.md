@@ -27,6 +27,6 @@ Todo el hardware está basado en la **Raspberry Pi Pico 2 W**, programado en ent
 | **07** | ADC_Signal_Conditioning | Python / C++ | [Ver sesión 07](https://github.com/LeslieSanchez0/1/tree/main/Sesion_07_ADC_Signal_Conditioning) |
 | **08** | DualCore_Multiarea | Python / C++  | [Ver sesión 08](https://github.com/LeslieSanchez0/1/tree/main/Sesion_08_DualCore_Multiarea) |
 | **09** | UART | Python / C++  | [Ver sesión 09](https://github.com/LeslieSanchez0/1/tree/main/Sesion_09_UART) |
-| **2do Examen** | ... | Python / C++  | ... |
+| **2do Examen** | Sistema de Control Serial Inteligente | Python / C++  | [EXAMEN 2](https://github.com/LeslieSanchez0/1/tree/main/Sesion_09_UART) |
 
 *(Nota: Haz clic en los enlaces de la tabla para ver el código, diagramas y videos de cada práctica).*
