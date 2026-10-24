@@ -34,7 +34,7 @@ El sistema aprovecha los dos núcleos de la Raspberry Pi Pico para garantizar la
 
 ---
 
-## 📜 Protocolo de Comandos Seriales
+## Protocolo de Comandos Seriales
 
 ### Comandos Válidos
 | Comando | Acción | Respuesta Esperada |
