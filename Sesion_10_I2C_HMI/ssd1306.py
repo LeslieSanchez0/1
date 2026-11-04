@@ -1,6 +1,4 @@
 # ssd1306.py
-# Driver didactico compacto para OLED SSD1306 128x64 por I2C.
-# Compatible con MicroPython + framebuf. Pensado para esta practica.
 
 from micropython import const
 import framebuf
