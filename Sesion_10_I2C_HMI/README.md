@@ -15,8 +15,8 @@ El sistema monitorea una señal analógica (ADC), gestiona estados del sistema m
 * **Línea de Reloj (SCL):** GP5
 * **Frecuencia del Bus:** $400\text{ kHz}$ (Fast-mode)
 * **Dispositivo Principal (OLED SSD1306):**
-  *Dirección Decimal: 60
-  *Dirección Hexadecimal: 0x3C
+  * Dirección Decimal: 60
+  * Dirección Hexadecimal: 0x3C
 
 ---
 ## Diagnóstico del Bus (i2c.scan())
