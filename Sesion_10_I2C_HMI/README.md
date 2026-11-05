@@ -50,9 +50,9 @@ La navegación entre páginas se realiza mediante la pulsación de un botón (de
 
 | ID Prueba | Acción | Resultado Esperado | Estado |
 | :--- | :--- | :--- | :--- |
-| **P-01: SCAN** | Ejecutar script inicial de escaneo | OLED detectada en dirección 0x3C (60 decimal) |
-| **Monitoreo Thonny** | Aparece directamente en la consola por USB. | No se muestra automáticamente en Thonny. |
-| **Uso Principal** | Depuración y consola interactiva de MicroPython. | Comunicación con periféricos externos y otros microcontroladores. |
+| **P-01: SCAN** | Ejecutar script inicial de escaneo | OLED detectada en dirección 0x3C (60 decimal) | PASS |
+| **P-02: LIVE NORMALy** | Ajustar ADC al $20\%$ | Pantalla muestra NORMAL, barra corta, LED OFF | PASS |
+| **P-03: LIVE WARNING** | Ajustar ADC al $60\%$ | Pantalla muestra WARNING, barra media, LED OFF. | PASS |
 
 ---
 
@@ -64,9 +64,9 @@ Gracias a esta arquitectura:
 
 ---
 ## Conclusiones
-* Se muestra la diferencia entre el canal de depuración USB/REPL y el periférico UART hardware (UART0). Este diferenciador es importante para el diseño de sistemas embebidos donde la consola de desarrollo no debe interferir con la comunicación entre dispositivos.
+El uso del bus I2C en la Raspberry Pi Pico permitió conectar de forma eficiente la pantalla OLED y los sensores usando solo dos pines (GP4 y GP5). Esto facilitó el desarrollo de una HMI interactiva de tres páginas con navegación por botón y visualización de datos en tiempo real, confirmando la escalabilidad de los sistemas embebidos.
 
-Saluditos Wichoooo 🦆
+Jiji, este proyecto me gustó bastantito 
 ---
 
 
