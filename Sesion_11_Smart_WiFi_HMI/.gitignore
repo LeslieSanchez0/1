@@ -1,1 +1,11 @@
+# Nunca subir credenciales
+secrets.py
 
+# Archivos generados
+__pycache__/
+*.pyc
+
+# Sistema operativo / editores
+.DS_Store
+Thumbs.db
+.vscode/
