@@ -24,8 +24,8 @@ Integra: **Wi-Fi + HTTP + PWM + salida digital + I2C/OLED**.
 | LED 2 (digital) | GP14 | Con resistencia de 220/330 Ω, ON/OFF |
 | OLED SDA | GP4 | I2C(0) |
 | OLED SCL | GP5 | I2C(0) |
-| OLED VCC | 3V3 | |
-| OLED GND | GND | |
+| OLED VCC | 3V3 | Alimentación |
+| OLED GND | GND | Tierra |
 
 **Configuración del bus I2C**
 
@@ -74,8 +74,8 @@ La laptop **no cambia de red**: sigue teniendo Internet y accede a la Pico por s
 | GET | `/api/pwm?value=N` | Ajusta el PWM a N (0–100) y devuelve JSON. Si N es inválido → **400** |
 | GET | `/api/led2/toggle` | Alterna LED 2 (OFF → ON → OFF…) y devuelve JSON |
 | GET | `/api/leds?state=on\|off` | **Bonus:** enciende/apaga ambos LEDs |
-| GET | `/favicon.ico` | 204 No Content |
-| GET | cualquier otra ruta | **404** Not Found |
+| GET | `/favicon.ico` | Responde 204 No Content para evitar ruido en los logs de peticiones |
+| GET | cualquier otra ruta | Cualquier ruta no reconocida responde **404 Not Found** |
 
 **Ejemplo de `/api/status`:**
 
